@@ -5,8 +5,8 @@
 <p>GET | POST | DELETE | PUT</p>
 <h3>URL Params</h3>
 <ul>
-   <li>{get}-> api/products ( returns all products in JSON structure )</li>
-   <li>{post}-> api/products </li>
+   <li>{get}->  yourdomain/api/products ( returns all products in JSON structure )</li>
+   <li>{post}->  yourdomain/api/products ( create a new produkt and returns that product as JSON)</li>
    <ul>
       <li>All fields requierd</li>
       <li>product_name -> string</li>
@@ -38,9 +38,9 @@
    </ul>
    <li>}</li>
    <li>}</li>
-   <li>returns-> the new Product</li>
+   
 
-<li>{put}-> api/products/(id->integer)</li>
+<li>{put}->  yourdomain/api/products/(id)  ( edit a produkt and returns that product as JSON)</li>
 <ul>
    <li>All fields requierd</li>
    <li>product_name -> string</li>
@@ -72,10 +72,10 @@
 </ul>
 <li>}</li>
 <li>}</li>
-<li>returns-> the update Product</li>
 
-<li>{delete}-> http://127.0.0.1:8000/api/products/(id->integer)</li>
-<li>returns->message after delete</li>
+
+<li>{delete}-> yourdomain/api/products/(id)  ( delete a  produkt and returns a message)</li>
+
 </ul>
 <h3>Error:</h3>
 <ul>
