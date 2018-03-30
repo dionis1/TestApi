@@ -1,12 +1,12 @@
 <h1> ApiTest </h1>
 <h3>URL</h3>
-<p>http://127.0.0.1:8000/api/products</p>
+<p> yourdomain/api/products</p>
 <h3>Method:</h3>
 <p>GET | POST | DELETE | PUT</p>
 <h3>URL Params</h3>
 <ul>
-   <li>{get}-> http://127.0.0.1:8000/api/products ( returns all products in JSON structure )</li>
-   <li>{post}-> http://127.0.0.1:8000/api/products </li>
+   <li>{get}-> api/products ( returns all products in JSON structure )</li>
+   <li>{post}-> api/products </li>
    <ul>
       <li>All fields requierd</li>
       <li>product_name -> string</li>
@@ -40,7 +40,7 @@
    <li>}</li>
    <li>returns-> the new Product</li>
 
-<li>{put}-> http://127.0.0.1:8000/api/products/(id->integer)</li>
+<li>{put}-> api/products/(id->integer)</li>
 <ul>
    <li>All fields requierd</li>
    <li>product_name -> string</li>
