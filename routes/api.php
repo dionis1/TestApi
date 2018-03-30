@@ -25,3 +25,7 @@ Route::get('/products/{produkt}', 'ProduktController@show');
 Route::post('/products', 'ProduktController@store');
 Route::put('/products/{produkt}', 'ProduktController@update');
 Route::delete('/products/{produkt}', 'ProduktController@delete');
+
+Route::fallback(function(){
+    return response()->json(['message' => 'URL NOT FOUND!'], 404);
+});

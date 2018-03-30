@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -41,7 +42,7 @@ class Handler extends ExceptionHandler
 
     /**
      * Render an exception into an HTTP response.
-     *
+     * ModelNotFoundException
      * @param  \Illuminate\Http\Request  $request
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
@@ -49,13 +50,18 @@ class Handler extends ExceptionHandler
     
     public function render($request, Exception $exception)
     {
-    
-    if ($exception instanceof ModelNotFoundException) {
-        return response()->json([
-            'error' => 'Resource not found'
-        ], 404);
-    }
+        if ($exception instanceof NotFoundHttpException) {
+            return response()->json(['message' => 'Not Found!'], 404);
+        }
+        
+        if ($exception instanceof MethodNotAllowedHttpException) {
+            return response()->json(['message' => 'Bad request!'], 400);
+        }
 
-    return parent::render($request, $exception);
+        if ($exception instanceof ModelNotFoundException) {
+            return response()->json(['message' => 'Not Found!'], 404);
+        }
+
+        return parent::render($request, $exception);
     }
 }
