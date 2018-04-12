@@ -29,3 +29,4 @@ Route::delete('/products/{produkt}', 'ProduktController@delete');
 Route::fallback(function(){
     return response()->json(['message' => 'URL NOT FOUND!'], 404);
 });
+	

@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Produkt;
 
-class ProduktsTableSeeder extends Seeder
+class ProduktTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,13 +12,13 @@ class ProduktsTableSeeder extends Seeder
      */
     public function run()
     {
-        Product::truncate();
+        Produkt::truncate();
 
         $faker = \Faker\Factory::create();
 
         
         for ($i = 0; $i < 50; $i++) {
-            Product::create([
+            Produkt::create([
                 'product_name' => $faker->name,
                 'product_description' => $faker->sentence,
                 'product_price' => $faker->numberBetween($min = 0, $max = 9000),

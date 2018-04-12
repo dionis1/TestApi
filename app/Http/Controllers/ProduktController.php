@@ -9,44 +9,38 @@ use App\Http\Resources\ProduktResource;
 class ProduktController extends Controller
 {
     public function index()
-    {
-        return ProduktResource::collection(Produkt::all());
+    {   
+        $produkt = Produkt::paginate(15);
+
+        return ProduktResource::collection($produkt);
 
         
     }
 
     public function show(Produkt $produkt)
-    {
-        
-        return  ProduktResource::collection(Produkt::findorfail($produkt));
+    {   
+
+        $produkt = Produkt::findOrFail($produkt);
+
+        return new  ProduktResource($produkt);
        
     }
 
     public function store(Request $request)
     {   
-        if($request->has('product_name')){
-            if($request->has('product_description')){
-                if($request->has('product_price')){
-                    if($request->has('product_quantity')){
+        
 
-                        $produkt = Produkt::create($request->all());
-        
-        
-                        return response()->json($produkt);
-                    }else{
-                        return response()->json(['message' => 'You need to add Product Quantity '], 503);
-                    }
-                }else{
-                    return response()->json(['message' => 'You need to add Product Price '], 503);
-                }
-            }else{
-               return response()->json(['message' => 'You need to add Product Description '], 503);
-            }
-        }else{
-            return response()->json(['message' => 'You need to add Product Name '], 503);
-        }
+    $produkt = new Produkt(); ($request->all());
 
-        
+    $produkt->product_name = $request->product_name;
+    $produkt->product_description = $request->product_description;
+    $produkt->product_price =$request->product_price;
+    $produkt->product_quantity =$request->product_quantity;
+
+    $produkt->save();
+   
+    return new  ProduktResource($produkt);
+
     }
 
     public function update(Request $request, Produkt $produkt)
