@@ -21,23 +21,10 @@
          <li>"product_description": "Product Description ",</li>
          <li>"product_price": 1,</li>
          <li>"product_quantity": 2,</li>
-         <li>"created_at": {</li>
-         <ul>
-            <li>"date": "2018-03-29 18:03:03.000000",</li>
-            <li>"timezone_type": 3,</li>
-            <li>"timezone": "UTC"</li>
-         </ul>
       </ul>
       <li>},</li>
    </ul>
-   <li>"updated_at": {</li>
-   <ul>
-      <li>"date": "2018-03-29 18:04:02.000000",</li>
-      <li>"timezone_type": 3,</li>
-      <li>"timezone": "UTC"</li>
-   </ul>
-   <li>}</li>
-   <li>}</li>
+   
    
 
 <li>{put}->  yourdomain/api/products/(id)  ( edit a produkt and returns that product as JSON)</li>
@@ -47,7 +34,7 @@
    <li>product_description ->text</li>
    <li>product_price ->integer</li>
    <li>product_quantity -> integer</li>
-   <li>created_at & updated_at -> like on example</li>
+   
    <li>{</li>
    <ul>
       <li>"id": 1,</li>
@@ -56,22 +43,11 @@
       <li>"product_price": 1,</li>
       <li>"product_quantity": 2,</li>
       <li>"created_at": {</li>
-      <ul>
-         <li>"date": "2018-03-29 18:03:03.000000",</li>
-         <li>"timezone_type": 3,</li>
-         <li>"timezone": "UTC"</li>
-      </ul>
    </ul>
    <li>},</li>
 </ul>
-<li>"updated_at": {</li>
-<ul>
-   <li>"date": "2018-03-29 18:04:02.000000",</li>
-   <li>"timezone_type": 3,</li>
-   <li>"timezone": "UTC"</li>
-</ul>
-<li>}</li>
-<li>}</li>
+
+
 
 
 <li>{delete}-> yourdomain/api/products/(id)  ( delete a  produkt and returns a message)</li>
