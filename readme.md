@@ -13,7 +13,7 @@
       <li>product_description ->text</li>
       <li>product_price ->integer</li>
       <li>product_quantity -> integer</li>
-      <li>created_at & updated_at -> like on example</li>
+      
       <li>{</li>
       <ul>
          <li>"id": 1,</li>
@@ -42,7 +42,7 @@
       <li>"product_description": "Product Description ",</li>
       <li>"product_price": 1,</li>
       <li>"product_quantity": 2,</li>
-      <li>"created_at": {</li>
+     
    </ul>
    <li>},</li>
 </ul>
